@@ -40,8 +40,9 @@ class Solution:
         
         if p.val!=q.val:
             return False
-            
+
         lft = self.isSameTree(p.left,q.left)
         rht = self.isSameTree(p.right,q.right)
         # print(p_values, q_values)
+        print(lft, rht)
         return lft and rht
