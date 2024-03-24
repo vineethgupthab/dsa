@@ -5,13 +5,11 @@ class Solution:
         while left<right:
             if nums[left]+nums[right]==k:
                 count+=1
-                #print(left, right, nums)
                 nums.pop(left)
                 left=left
                 right=right-1
                 nums.pop(right)
                 right=right-1
-                #print(left, right, nums)
                 continue
             elif nums[left]+nums[right]<k:
                 left+=1
