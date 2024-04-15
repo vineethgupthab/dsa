@@ -1,14 +1,14 @@
 -- Write your PostgreSQL query statement below
 with confirmed_table as
 (
-    SELECT a.user_id, COUNT(action)::FLOAT as confirmed_actions FROM Signups a
+    SELECT a.user_id, COUNT(action) as confirmed_actions FROM Signups a
     JOIN Confirmations b ON a.user_id = b.user_id
     WHERE action='confirmed'
     GROUP BY a.user_id
 )
 , entries_table as
 (
-    SELECT a.user_id, COUNT(action)::FLOAT as all_actions FROM Signups a
+    SELECT a.user_id, COUNT(action) as all_actions FROM Signups a
     JOIN Confirmations b ON a.user_id = b.user_id
     GROUP BY a.user_id
 )
