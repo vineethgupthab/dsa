@@ -7,7 +7,7 @@ class Solution:
         while j<len(nums) and i<j:
             max_sum+=nums[j]
             max_sum-=nums[i]
+            greatest_sum = max(max_sum, greatest_sum)
             i+=1
             j+=1
-            greatest_sum = max(max_sum, greatest_sum)
         return greatest_sum/k
